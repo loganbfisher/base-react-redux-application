@@ -9,7 +9,9 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
 // Create an object for the default data.
-const defaultState = {};
+const defaultState = {
+  test: {}
+};
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(promise(), thunk));
 

@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as testCreators from '../actions/test';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.setTest({ data: 'This is a test' });
+  }
+
   render() {
     return (
       <div className="App">
@@ -8,11 +16,23 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          {this.props.test.data}
         </p>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    test: state.test
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    ...testCreators},
+    dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
