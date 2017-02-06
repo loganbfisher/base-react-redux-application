@@ -4,9 +4,9 @@ import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
-import '../styles/index.css';
+import './styles/index.css';
 
-import App from '../components/App';
+import App from './components/App';
 
 render((
   <Provider store={store}>
