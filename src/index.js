@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
-import './styles/index.css';
+import './styles/main.scss';
 
 import App from './components/App';
 
